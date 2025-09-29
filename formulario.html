@@ -24,34 +24,29 @@
     <div class="card" style="width: 30rem;">
         <div class="card-body">
             <h2 class="card-title">Formulario solicitud </h2> 
-            <form action="" method="post">
-
-            <div>
-                <label class="form-label" for="nombre">Nombres:</label>
-                <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ingrese sus nombres"><br><br>
-            </div>
-            
-            <div >
-                <label class="form-label" for="apellido">Apellidos:</label>
-                <input class="form-control" type="text" id="apellido" name="apellido" required placeholder="Ingrese sus apellidos"><br><br>
-            </div>
-
-            <div >
-                <label class="form-label" for="URL">URL:</label>
-                <input class="form-control" type="text" id="URL" name="URL" required placeholder="Ingrese la URL a solicitar"><br><br>
-            </div>
-
-            <div class="dropdown mb-3">
-                <label class="form-label" for="dpto.">Dpto: </label>
-                <select class="form-select" id="dpto." name="dpto." required>
-                    <option value="">Seleccione un departamento</option>
-                    <option value="dpto1">Departamento 1</option>
-                    <option value="dpto2">Departamento 2</option>
-                    <option value="dpto3">Departamento 3</option>
-                </select>
-            </div>
-
-            <input onclick="mostrarAlerta()" class="btn btn-secondary mb-3" type="submit" value="Enviar">
+            <form id="miFormulario" action="" method="post">
+                <div>
+                    <label class="form-label" for="nombre">Nombres:</label>
+                    <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ingrese sus nombres"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="apellido">Apellidos:</label>
+                    <input class="form-control" type="text" id="apellido" name="apellido" required placeholder="Ingrese sus apellidos"><br><br>
+                </div>
+                <div>
+                    <label class="form-label" for="URL">URL:</label>
+                    <input class="form-control" type="text" id="URL" name="URL" required placeholder="Ingrese la URL a solicitar"><br><br>
+                </div>
+                <div class="dropdown mb-3">
+                    <label class="form-label" for="dpto.">Dpto: </label>
+                    <select class="form-select" id="dpto." name="dpto." required>
+                        <option value="">Seleccione un departamento</option>
+                        <option value="dpto1">Departamento 1</option>
+                        <option value="dpto2">Departamento 2</option>
+                        <option value="dpto3">Departamento 3</option>
+                    </select>
+                </div>
+                <input class="btn btn-secondary mb-3" type="submit" value="Enviar">
             </form>
         </div>   
     </div>
@@ -74,9 +69,19 @@
 </style>
 
 <script>
-    function mostrarAlerta() {
-        alert("Formulario enviado correctamente");
-    }
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+        const nombre = document.getElementById('nombre').value.trim();
+        const apellido = document.getElementById('apellido').value.trim();
+        const url = document.getElementById('URL').value.trim();
+        const dpto = document.getElementById('dpto.').value;
+
+        if (!nombre || !apellido || !url || !dpto) {
+            alert("Por favor, complete todos los campos antes de enviar el formulario.");
+            event.preventDefault();
+        } else {
+            alert("Formulario enviado correctamente");
+        }
+    });
 </script>
     </body>
 </html>
