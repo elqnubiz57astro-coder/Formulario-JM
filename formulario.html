@@ -9,69 +9,74 @@
     
 </head>
 <body>
-    
-    <div>   
-    <h1>Formulario</h1>
-    <form action="" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
-
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required><br><br>
-
-        <label for="URL">URL:</label>
-        <input type="text" id="URL" name="URL" required><br><br>
-
-        <label for="dpto.">Dpto: </label>
-        <input type="text" id="dpto." name="dpto." required><br><br>
-
-        <input type="submit" value="Enviar">
-
-
+  <nav class="navbar" style="background: linear-gradient(61deg,rgba(13, 134, 238, 1) 4%, rgba(255, 255, 255, 1) 4%, rgba(255, 255, 255, 1) 35%, rgba(13, 134, 238, 1) 43%, rgba(18, 18, 18, 1) 100%);">   
+        <div class="container-sm">
+        <h1>
+            <img src="src/img/logo1.png" alt="Logo1" width="25%">
+        </h1>
     </div>
-    
-        
+  </nav>  
+
+<!-- Añade una clase para el espacio -->
+<div class="navbar-space"></div>
+
+<div class="center-containers">
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+            <h2 class="card-title">Formulario solicitud </h2> 
+            <form action="" method="post">
+
+            <div>
+                <label class="form-label" for="nombre">Nombres:</label>
+                <input class="form-control" type="text" id="nombre" name="nombre" required><br><br>
+            </div>
+            
+            <div >
+                <label class="form-label" for="apellido">Apellidos:</label>
+                <input class="form-control" type="text" id="apellido" name="apellido" required><br><br>
+            </div>
+
+            <div >
+                <label class="form-label" for="URL">URL:</label>
+                <input class="form-control" type="text" id="URL" name="URL" required><br><br>
+            </div>
+
+            <div class="dropdown mb-3">
+                <label class="form-label" for="dpto.">Dpto: </label>
+                <select class="form-select" id="dpto." name="dpto." required>
+                    <option value="">Seleccione un departamento</option>
+                    <option value="dpto1">Departamento 1</option>
+                    <option value="dpto2">Departamento 2</option>
+                    <option value="dpto3">Departamento 3</option>
+                </select>
+            </div>
+
+            <input onclick="mostrarAlerta()" class="btn btn-secondary mb-3" type="submit" value="Enviar">
+            </form>
+        </div>   
+    </div>
+</div>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        height: 100vh;
+    .navbar-space {
+        padding-top: 40px;
+    }
+    .center-containers {
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 80vh;
     }
-    label {
-        display: inline-block;
-        width: 70px;
+    .card {
         color: white;
-    }
-    input{
-        width: 300px;
-        padding: 5px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-    }
-    input[type="submit"] {
-        padding: 5px 15px;
-        background-color: #78bbff;
-        color: white;   
-        border: none;
-        cursor: pointer;
-        border-radius: 26px;
-    }
-    input[type="submit"]:hover {
-        background-color: #395b72;
-    }
-    div {
-        background: #2888b8;
-        background: linear-gradient(45deg,rgb(0, 79, 182) 51%, rgb(133, 133, 133) 49%);
-        width: auto;
-        height: auto;
-        padding: 50px;
-        border: px solid rgb(4, 0, 122);
-        border-radius: 15px;
-        color : white;
+        background: #ffffff;
+        background: linear-gradient(226deg,rgba(255, 255, 255, 1) 0%, rgba(13, 134, 238, 1) 26%, rgb(69, 69, 69) 88%);
     }
 </style>
-</body>
+
+<script>
+    function mostrarAlerta() {
+        alert("Formulario enviado correctamente");
+    }
+</script>
+    </body>
 </html>
