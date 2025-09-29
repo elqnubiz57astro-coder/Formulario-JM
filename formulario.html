@@ -9,7 +9,7 @@
     
 </head>
 <body>
-  <nav class="navbar" style="background: linear-gradient(61deg,rgba(13, 134, 238, 1) 4%, rgba(255, 255, 255, 1) 4%, rgba(255, 255, 255, 1) 35%, rgba(13, 134, 238, 1) 43%, rgba(18, 18, 18, 1) 100%);">   
+  <nav class="navbar" style="background: linear-gradient(61deg,rgba(13, 134, 238, 1) -1%, rgba(255, 255, 255, 1) 8%, rgba(255, 255, 255, 1) 27%, rgba(13, 134, 238, 1) 43%, rgba(18, 18, 18, 1) 100%);">   
         <div class="container-sm">
         <h1>
             <img src="src/img/logo1.png" alt="Logo1" width="25%">
@@ -76,12 +76,13 @@
         const dpto = document.getElementById('dpto.').value;
 
         if (!nombre || !apellido || !url || !dpto) {
-            alert("Por favor, complete todos los campos antes de enviar el formulario.");
+            alert();
             event.preventDefault();
         } else {
             alert("Formulario enviado correctamente");
         }
     });
 </script>
+
     </body>
 </html>
